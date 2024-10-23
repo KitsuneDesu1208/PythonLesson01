@@ -114,3 +114,69 @@
 
 #for color in ['red','green','blue']:
 #    print(color)
+
+python
+複製程式碼
+#import random
+#
+#class Player:
+#    def __init__(self, name):
+#        self.name = name
+#        self.position = 0
+#        self.money = 100  # 初始金錢
+#        self.properties = []
+#
+#    def move(self, spaces):
+#        self.position = (self.position + spaces) % 20  # 假設有20個格子
+#        print(f"{self.name} 移動到 {self.position} 號格子。")
+#
+#    def buy_property(self, property_name, price):
+#        if self.money >= price:
+#            self.money -= price
+#            self.properties.append(property_name)
+#            print(f"{self.name} 購買了 {property_name}，剩餘金錢: {self.money}。")
+#        else:
+#            print(f"{self.name} 沒有足夠的金錢購買 {property_name}。")
+#
+#def roll_dice():
+#    return random.randint(1, 6)
+#
+#def main():
+#    print("歡迎來到簡易版 RPG 遊戲！")
+#    player_name = input("請輸入玩家名稱: ")
+#    player = Player(player_name)
+#
+#    while True:
+#        input("按 Enter 鍵擲骰子...")
+#        dice_roll = roll_dice()
+#        print(f"{player.name} 擲出了 {dice_roll}。")
+#        player.move(dice_roll)
+#
+#        # 隨機事件
+#        if player.position % 5 == 0:  # 每隔5個格子有事件
+#            print("你遇到了一個隨機事件！")
+#            event_type = random.choice(["獲得金錢", "失去金錢"])
+#            if event_type == "獲得金錢":
+#                amount = random.randint(10, 50)
+#                player.money += amount
+#                print(f"{player.name} 獲得了 {amount} 金錢，剩餘金錢: {player.money}。")
+#            else:
+#                amount = random.randint(10, 50)
+#                player.money -= amount
+#                print(f"{player.name} 失去了 {amount} 金錢，剩餘金錢: {player.money}。")
+#
+#        # 購買地產
+#        if player.position % 3 == 0 and player.position != 0:  # 每隔3個格子可以購買地產
+#            property_price = random.randint(20, 70)
+#            print(f"你到達了一個地產格子！這個地產的價格是 {property_price}。")
+#            buy_decision = input("你想購買這個地產嗎？(y/n): ")
+#            if buy_decision.lower() == 'y':
+#                player.buy_property(f"地產{player.position}", property_price)
+#
+#        # 結束條件
+#        if player.money <= 0:
+#            print(f"{player.name} 已經破產，遊戲結束！")
+#            break
+#
+#if __name__ == "__main__":
+#    main()
